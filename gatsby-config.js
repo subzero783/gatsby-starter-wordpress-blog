@@ -24,11 +24,24 @@ module.exports = {
        *
        */
       resolve: `gatsby-source-wordpress`,
+      // options: {
+      //   // the only required plugin option for WordPress is the GraphQL url.
+      //   url:
+      //     process.env.WPGRAPHQL_URL ||
+      //     `https://wpgatsbydemo.wpengine.com/graphql`,
+      // },
       options: {
-        // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://wpgatsbydemo.wpengine.com/graphql`,
+        // Specify the URL of the WordPress source
+        // baseUrl: `reviewszone.local`,
+        url: `http://reviewszone.local/graphql`,
+        schema: {
+          timeout: 1000000,
+        },
+        // protocol: `http`,
+        // // Indicates if a site is hosted on WordPress.com
+        // hostingWPCOM: false,
+        // // Specify which URL structures to fetch
+        // includedRoutes: ["**/posts", "**/tags", "**/categories"],
       },
     },
 
